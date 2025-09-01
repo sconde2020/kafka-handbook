@@ -14,39 +14,40 @@ It is written in simple language with clear examples so anyone can learn — fro
    * Why use Kafka?  
    * Core terminology  
 
-2. [Broker & Controller](notes/02-broker-controller.md)  
+2. [Setup](notes/02-setup.md)  
+   * Kafka Setup (Beginner Guide)  
+      * Kafka with Zookeeper  
+      * Kafka with KRaft  
+      * Kafka with Docker
+
+3. [Broker & Controller](notes/02-broker-controller.md)  
    * What is a Kafka broker?  
    * Role of the controller  
    * Kafka cluster overview  
 
-3. [Topics & Partitions](notes/03-topics-partitions.md)  
+4. [Topics & Partitions](notes/03-topics-partitions.md)  
    * What are topics?  
    * How partitions work  
    * Offsets and ordering  
 
-4. [Producers](notes/04-producers.md)  
+5. [Producers](notes/04-producers.md)  
    * How producers send messages  
    * Partitioners & batching  
    * Message acknowledgements  
 
-5. [Consumers & Consumer Groups](notes/05-consumers.md)  
+6. [Consumers & Consumer Groups](notes/05-consumers.md)  
    * How consumers read messages  
    * Consumer groups and parallelism  
    * Offset management  
 
-6. [Retention & Storage](notes/06-retention-storage.md)  
+7. [Retention & Storage](notes/06-retention-storage.md)  
    * Log retention policy  
    * Log compaction  
    * Storage on disk (segments, indexes)  
 
-7. [KRaft vs ZooKeeper](notes/07-kraft-vs-zookeeper.md)  
+8. [KRaft vs ZooKeeper](notes/07-kraft-vs-zookeeper.md)  
    * Evolution of Kafka metadata management  
    * Differences between KRaft and ZooKeeper  
-
-8. [Examples & Commands](notes/08-examples.md)  
-   * Docker/Kafka setup  
-   * CLI commands for topics, producers, consumers  
-   * Practical examples  
 
 ---
 
