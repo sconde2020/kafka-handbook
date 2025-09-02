@@ -9,49 +9,52 @@ It is written in simple language with clear examples so anyone can learn — fro
 ## 📂 Table of Contents
 
 ### 🟢 Beginner
+
 1. [Introduction](notes/01-introduction.md)  
    * What is Kafka?  
    * Why use Kafka?  
    * Core terminology  
 
 2. [Setup](notes/02-setup.md)  
-   * Kafka Setup (Beginner Guide)  
+   * Kafka Setup  
       * Kafka with Zookeeper  
       * Kafka with KRaft  
-      * Kafka with Docker
+      * Kafka with Docker  
 
-3. [Broker & Controller](notes/02-broker-controller.md)  
+3. [Broker & Controller](notes/03-broker-controller.md)  
    * What is a Kafka broker?  
    * Role of the controller  
    * Kafka cluster overview  
+   * Creating a Kafka Cluster with Docker  
 
-4. [Topics & Partitions](notes/03-topics-partitions.md)  
+4. [Topics & Partitions](notes/04-topics-partitions.md)  
    * What are topics?  
    * How partitions work  
    * Offsets and ordering  
 
-5. [Producers](notes/04-producers.md)  
+5. [Producers](notes/05-producers.md)  
    * How producers send messages  
    * Partitioners & batching  
    * Message acknowledgements  
 
-6. [Consumers & Consumer Groups](notes/05-consumers.md)  
+6. [Consumers & Consumer Groups](notes/06-consumers.md)  
    * How consumers read messages  
    * Consumer groups and parallelism  
    * Offset management  
 
-7. [Retention & Storage](notes/06-retention-storage.md)  
+7. [Retention & Storage](notes/07-retention-storage.md)  
    * Log retention policy  
    * Log compaction  
    * Storage on disk (segments, indexes)  
 
-8. [KRaft vs ZooKeeper](notes/07-kraft-vs-zookeeper.md)  
+8. [KRaft vs ZooKeeper](notes/08-kraft-vs-zookeeper.md)  
    * Evolution of Kafka metadata management  
    * Differences between KRaft and ZooKeeper  
 
 ---
 
 ### 🟡 Intermediate
+
 9. [Replication & Fault Tolerance](notes/09-replication-fault-tolerance.md)  
    * Leader & follower replicas  
    * In-Sync Replicas (ISR)  
