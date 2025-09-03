@@ -104,9 +104,9 @@ This will show the LeaderId, which is the broker acting as the controller.
 Example output:
 ```yaml
 Topic: test-docker      TopicId: rQKRV4sqTJW-GoDUfnJGKg PartitionCount: 3       ReplicationFactor: 3    Configs: 
-        Topic: test-docker      Partition: 0    Leader: 3       Replicas: 3,1,2 Isr: 3,1,2      Elr:    LastKnownElr: 
-        Topic: test-docker      Partition: 1    Leader: 1       Replicas: 1,2,3 Isr: 1,2,3      Elr:    LastKnownElr: 
-        Topic: test-docker      Partition: 2    Leader: 2       Replicas: 2,3,1 Isr: 2,3,1      Elr:    LastKnownElr: 
+  Topic: test-docker      Partition: 0    Leader: 3       Replicas: 3,1,2 Isr: 3,1,2      Elr:    LastKnownElr: 
+  Topic: test-docker      Partition: 1    Leader: 1       Replicas: 1,2,3 Isr: 1,2,3      Elr:    LastKnownElr: 
+  Topic: test-docker      Partition: 2    Leader: 2       Replicas: 2,3,1 Isr: 2,3,1      Elr:    LastKnownElr: 
 ```
 
 Here:

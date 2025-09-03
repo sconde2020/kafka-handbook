@@ -29,18 +29,23 @@ It is written in simple language with clear examples so anyone can learn — fro
 
 4. [Topics & Partitions](notes/04-topics-partitions.md)  
    * What are topics?  
-   * How partitions work  
-   * Offsets and ordering  
+   * How Do Partitions Work?  
+   * What Are Offsets?  
+   * Ordering in Kafka
+   * Quick Terminology
+   * Creating a Topic with Partitions
 
 5. [Producers](notes/05-producers.md)  
    * How producers send messages  
    * Partitioners & batching  
    * Message acknowledgements  
+   * Example with Java
 
 6. [Consumers & Consumer Groups](notes/06-consumers.md)  
    * How consumers read messages  
    * Consumer groups and parallelism  
    * Offset management  
+   * Example with Java
 
 7. [Retention & Storage](notes/07-retention-storage.md)  
    * Log retention policy  
@@ -58,17 +63,20 @@ It is written in simple language with clear examples so anyone can learn — fro
 9. [Replication & Fault Tolerance](notes/09-replication-fault-tolerance.md)  
    * Leader & follower replicas  
    * In-Sync Replicas (ISR)  
-   * High availability in Kafka  
+   * High availability in Kafka
+   * Example 
 
 10. [Delivery Semantics](notes/10-delivery-semantics.md)  
    * At-most-once  
    * At-least-once  
-   * Exactly-once (EOS)  
+   * Exactly-once (EOS) 
+   * Examples with Java 
 
 11. [Security](notes/11-security.md)  
    * Authentication (SASL, SSL)  
    * Authorization (ACLs)  
    * Encryption in transit  
+   * Examples
 
 12. [Kafka Streams & Processing](notes/12-streams-processing.md)  
    * Kafka Streams API basics  
