@@ -39,7 +39,7 @@ It is written in simple language with clear examples so anyone can learn — fro
    * How producers send messages  
    * Partitioners & batching  
    * Message acknowledgements  
-   * Example with Java
+   * Demonstrations
 
 6. [Consumers & Consumer Groups](notes/06-consumers.md)  
    * How consumers read messages  
