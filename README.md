@@ -50,7 +50,8 @@ It is written in simple language with clear examples so anyone can learn — fro
 #### 7. [Retention & Storage](notes/07-retention-storage.md)  
 - Log retention policy  
 - Log compaction  
-- Storage on disk (segments, indexes)  
+- Storage on disk (segments, indexes)
+- Demonstrations
 
 #### 8. [KRaft vs ZooKeeper](notes/08-kraft-vs-zookeeper.md)  
 - Evolution of Kafka metadata management  
