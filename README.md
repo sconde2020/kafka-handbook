@@ -54,8 +54,11 @@ It is written in simple language with clear examples so anyone can learn — fro
 - Demonstrations
 
 #### 8. [KRaft vs ZooKeeper](notes/08-kraft-vs-zookeeper.md)  
-- Evolution of Kafka metadata management  
-- Differences between KRaft and ZooKeeper  
+- Kafka Metadata
+- ZooKeeper
+- Kafka Kraft
+- Kraft or Zookeeper
+- Demonstrations
 
 ---
 
