@@ -54,7 +54,7 @@ All three messages together form a log.
 
 ---
 
-## Storage on Disk
+## Storage on disk (segments, indexes)
 
 Logs are stored on disk in a structured way. This makes it fast to read and write messages.
 
