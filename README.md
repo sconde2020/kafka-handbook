@@ -65,10 +65,10 @@ It is written in simple language with clear examples so anyone can learn — fro
 ### 🟡 Intermediate
 
 #### 9. [Replication & Fault Tolerance](notes/09-replication-fault-tolerance.md)  
-- Leader & follower replicas  
+- Leader & Follower Replicas  
 - In-Sync Replicas (ISR)  
 - High availability in Kafka
-- Example
+- Demonstrations with Docker
 
 #### 10. [Delivery Semantics](notes/10-delivery-semantics.md)  
 - At-most-once  
