@@ -65,17 +65,19 @@ Then start the cluster:
 --- 
 
 ### 2. Create a Topic with Replication
-Open a shell inside one broker (example with broker-1) and move to kafka bin folder:
+Open a shell inside one broker (example with broker-1) and move to kafka bin folder inside the container:
 
 ```bash 
-  docker exec -it broker-1 bash
-  cd /opt/kafka/bin/
+   docker exec -it broker-1 bash
+```
+```bash 
+   cd /opt/kafka/bin/ 
 ```
 
 Then run:
 ```bash 
   kafka-topics.sh --create \
-  --bootstrap-server broker-1:9092 \
+  --bootstrap-server localhost:9092 \
   --topic demo-replication \
   --partitions 1 \
   --replication-factor 3
@@ -93,47 +95,50 @@ Still inside the broker container:
 
 Example output:
 ```sql
-    Topic: demo-replication  Partition: 0  Leader: 1  Replicas: 1,2,3  Isr: 1,2,3
+    Topic: demo-replication TopicId: UosPf9uJRwevr72EfgBXOg PartitionCount: 1       ReplicationFactor: 3    Configs: 
+        Topic: demo-replication Partition: 0    Leader: 2       Replicas: 2,3,1 Isr: 2,3,1      Elr:    LastKnownElr:
 ``` 
 
-- **Leader: 1** → Broker 1 is the leader  
-- **Replicas: 1,2,3** → All three brokers store a copy  
-- **Isr: 1,2,3** → All are in sync  
+- **Leader: 2** → Broker 2 is the leader  
+- **Replicas: 2,3,1** → All three brokers store a copy  
+- **Isr: 2,3,1** → All are in sync  
 
 ---
 
 ### 4. Simulate a Broker Failure
-Stop broker-1:
+Stop broker-2:
 ```bash
-    docker stop broker-1
+    docker exec broker-2 kill 1
 ```
-Then describe again from broker-2:
+Then describe again from broker-1:
 ```bash
-    docker exec -it broker-2 bash
+    docker exec broker-1 \
       /opt/kafka/bin/kafka-topics.sh --describe \
-        --bootstrap-server broker-2:9092 \
+        --bootstrap-server localhost:9092 \
         --topic demo-replication
 ```
 Example output:
 ```sql
-Topic: demo-replication  Partition: 0  Leader: 2  Replicas: 1,2,3  Isr: 2,3
+Topic: demo-replication TopicId: UosPf9uJRwevr72EfgBXOg PartitionCount: 1       ReplicationFactor: 3    Configs: 
+    Topic: demo-replication Partition: 0    Leader: 3       Replicas: 2,3,1 Isr: 3,1        Elr:    LastKnownElr: 
 ```
-- **Leader switched to broker-2**
-- Broker 1 dropped out of the ISR
+- **Leader switched to broker-3**
+- Broker 2 dropped out of the ISR
 
 ---
 
 ### 5. Restart the Failed Broker
-Bring broker-1 back:
+Bring broker-2 back:
 
 ```bash
-    docker start broker-1
+    docker start broker-2
 ```
 After a short while, check again:
 ```sql
-Topic: demo-replication  Partition: 0  Leader: 2  Replicas: 1,2,3  Isr: 1,2,3
+Topic: demo-replication TopicId: UosPf9uJRwevr72EfgBXOg PartitionCount: 1       ReplicationFactor: 3    Configs: 
+    Topic: demo-replication Partition: 0    Leader: 3       Replicas: 2,3,1 Isr: 3,1,2      Elr:    LastKnownElr: 
 ```
-Broker 1 has rejoined the ISR, and the cluster is healthy again.
+Broker 2 has rejoined the ISR, and the cluster is healthy again.
 
 ## Summary
 
