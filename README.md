@@ -1,7 +1,7 @@
 # 📘 Kafka Handbook
 
 Welcome to the **Kafka Handbook** 🚀  
-This repository contains study notes, explanations, and diagrams about **Apache Kafka**.  
+This repository contains explanations, examples and real projects about **Apache Kafka**.  
 It is written in simple language with clear examples so anyone can learn — from beginners to advanced users.  
 
 ---
