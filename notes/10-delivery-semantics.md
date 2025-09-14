@@ -70,16 +70,64 @@ This ensures the transaction is processed once and only once.
 
 ## Examples with Java
 
-Below are simple Java code snippets showing how to configure Kafka producers for each delivery semantic.
+Below are simple Java code snippets showing how to configure Kafka producers & consumers for each delivery semantic.
 
 ### At-most-once
 
+***Java API***
+
 ```java
-Properties props = new Properties();
-props.put("acks", "0"); // No acknowledgment
-KafkaProducer<String, String> producer = new KafkaProducer<>(props);
-// Send message without retries
-producer.send(new ProducerRecord<>("topic", "message"));
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
+import java.time.Duration;
+import java.util.Collections;
+import java.util.Properties;
+
+public class AtMostOnceExample {
+
+    public static void main(String[] args) {
+        // ---------- Producer Config ----------
+        Properties producerProps = new Properties();
+        producerProps.put("bootstrap.servers", "localhost:9092");
+        producerProps.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        producerProps.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        // At-most-once producer config
+        producerProps.put("acks", "0");                  // No broker acknowledgment
+        producerProps.put("retries", "0");               // No retries
+        producerProps.put("enable.idempotence", "false");// Disable idempotence
+
+        KafkaProducer<String, String> producer = new KafkaProducer<>(producerProps);
+        producer.send(new ProducerRecord<>("sensor-data", "temperature:25"));
+        producer.close();
+
+        // ---------- Consumer Config ----------
+        Properties consumerProps = new Properties();
+        consumerProps.put("bootstrap.servers", "localhost:9092");
+        consumerProps.put("group.id", "sensor-consumer-group");
+        consumerProps.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        consumerProps.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+
+        // At-most-once consumer config
+        consumerProps.put("enable.auto.commit", "true");   // Offsets committed automatically
+        consumerProps.put("auto.commit.interval.ms", "1000"); // Commit happens periodically
+
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(consumerProps);
+        consumer.subscribe(Collections.singletonList("sensor-data"));
+
+        while (true) {
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+            records.forEach(record -> {
+                // Message might already be committed before processing
+                System.out.printf("Consumed message: %s%n", record.value());
+            });
+        }
+    }
+}
 ```
 
 ### At-least-once
