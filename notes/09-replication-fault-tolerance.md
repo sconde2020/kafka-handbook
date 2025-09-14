@@ -55,7 +55,7 @@ Kafka achieves **high availability** through replication and ISR:
 We will set up a **3-broker Kafka cluster** using Docker Compose.
 
 ### 1. Docker Compose Setup
-Create a docker compose file in a directory with this file : [docker-compose.yml](../examples/docker-compose.yml) 
+Create a docker compose file in a directory with this file : [docker-compose.yml](../examples/kafka-cluster-example/docker-compose.yml) 
 
 Then start the cluster:
 ```bash 
