@@ -79,8 +79,9 @@ It is written in simple language with clear examples so anyone can learn — fro
 #### 11. [Security](notes/11-security.md)  
 - Authentication (SASL, SSL)  
 - Authorization (ACLs)  
-- Encryption in transit  
-- Examples
+- Encryption in transit 
+- Common Kafka Security Configurations
+- Example with Java
 
 #### 12. [Kafka Streams & Processing](notes/12-streams-processing.md)  
 - Kafka Streams API basics  
