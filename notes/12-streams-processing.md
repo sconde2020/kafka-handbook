@@ -46,28 +46,18 @@ This code uses a state store to keep track of counts for each user within each 5
 
 ## Alternatives
 
-There are other tools for stream processing, each with different strengths:
+Other stream processing tools include:
 
-- **ksqlDB:** Provides a SQL-like interface for querying Kafka topics. It's ideal for users who prefer declarative queries and need to build simple stream processing logic quickly, without writing Java code.
-- **Apache Flink:** Designed for advanced stream and batch processing. Flink excels at complex event processing, stateful computations, and large-scale data pipelines. Use Flink when you need high throughput, low latency, and sophisticated processing features.
-- **Spark Streaming:** Part of Apache Spark, suitable for both batch and micro-batch stream processing. Spark Streaming is a good choice if you already use Spark for analytics and want to unify batch and streaming workloads.
+- **ksqlDB:** SQL-like queries for Kafka topics; good for quick, simple logic without coding.
+- **Apache Flink:** Advanced, scalable stream and batch processing; best for complex or large workloads.
+- **Spark Streaming:** Integrates with Spark for batch and micro-batch processing; ideal if you already use Spark.
 
-**When to use which:**
-
-- Use **Kafka Streams** for lightweight, embedded stream processing in Java applications, especially when you want tight integration with Kafka and need to deploy as part of your microservices.
-- Use **ksqlDB** for rapid prototyping, simple transformations, and when your team prefers SQL over code.
-- Use **Flink** for complex, large-scale, or stateful stream processing that requires advanced features and scalability.
-- Use **Spark Streaming** if your data infrastructure is already built around Spark and you want to process both batch and streaming data together.
-
-**Example with ksqlDB:**
-
-```sql
-CREATE TABLE click_counts AS
-SELECT user_id, COUNT(*) FROM user_clicks
-WINDOW TUMBLING (SIZE 5 MINUTES)
-GROUP BY user_id;
-```
+**Choose:**
+- **Kafka Streams** for simple, embedded Java stream processing.
+- **ksqlDB** for easy, SQL-based transformations.
+- **Flink** for complex, large-scale processing.
+- **Spark Streaming** for unified batch and stream analytics with Spark.
 
 ---
 
-Kafka Streams is great for building real-time applications. For more complex needs, consider alternatives like Flink or Spark Streaming.
+Kafka Streams is **great for building real-time** applications. For more complex needs, consider alternatives like Flink or Spark Streaming.

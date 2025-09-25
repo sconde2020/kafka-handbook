@@ -97,8 +97,9 @@ It is written in simple language with clear examples so anyone can learn — fro
 - Common troubleshooting  
 
 #### 14. [Schema Management](notes/14-schema-management.md)  
-- Why schemas matter (Avro, Protobuf, JSON)  
-- Confluent Schema Registry  
+- Data Formats in Kafka
+- Why Schemas Matter  
+- Schema Management Tools  
 - Backward/forward compatibility  
 
 #### 15. [Performance & Tuning](notes/15-performance-tuning.md)  
