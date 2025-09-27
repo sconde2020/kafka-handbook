@@ -93,8 +93,10 @@ It is written in simple language with clear examples so anyone can learn — fro
 ### 🔴 Advanced
 #### 13. [Monitoring & Operations](notes/13-monitoring-ops.md)  
 - Metrics (JMX, Prometheus, Grafana)  
+- JConsole vs. Grafana: Which Should You Use?
 - Log monitoring  
 - Common troubleshooting  
+- Setups
 
 #### 14. [Schema Management](notes/14-schema-management.md)  
 - Data Formats in Kafka
