@@ -108,6 +108,7 @@ It is written in simple language with clear examples so anyone can learn — fro
 - Producer configs (batch.size, linger.ms)  
 - Consumer configs (fetch.min.bytes, max.poll.interval.ms)  
 - Broker tuning & disk optimization  
+- Other Highly Impactful Kafka Tuning Properties  
 
 #### 16. [Real-world Architectures](notes/16-architectures.md)  
 - Kafka as a message queue vs. event streaming  
