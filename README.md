@@ -138,7 +138,7 @@ It is written in simple language with clear examples so anyone can learn — fro
 * Monitoring & alerting
 * Anti-patterns
 
-#### 17. [Real-world Architectures](notes/16-architectures.md)
+#### 17. [Real-world Architectures](notes/17-architectures.md)
 
 * Kafka as a message queue vs. event streaming
 * Event-driven microservices
